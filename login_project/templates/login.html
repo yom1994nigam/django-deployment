@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+	{% block content %}
+	<div class="container">
+		<div class="jumbotron" style="background-image: url(https://i.pinimg.com/originals/ae/ee/d6/aeeed6df08d39b180d44a90e2ce08dda.jpg); background-size: 100%;">
+	<h1 style="color:white;font-size:60px;">This is a Login page</h1>
+	<form action="{% url 'login_app:user_login'%}" method="POST">
+		{% csrf_token %}
+		<label for="username" style="color:white;font-size:40px;">Username:</label>
+		<input type="text" name="username" placeholder="username">
+		<br>
+		<label for="password" style="color:white;font-size:40px;">Password:</label>
+		<input type="password" name="password">
+		<br>
+		
+		<input type="submit" name="" value="Login" align="middle" style="border-color:black;margin-left:220px; margin-top: 40px">
+		
+
+	</form>
+
+	</div>
+</div>
+{% endblock %}

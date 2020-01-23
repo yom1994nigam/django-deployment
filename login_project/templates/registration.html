@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+	{% block content %}
+	<div class="container">
+		<div class="jumbotron" style="background-image: url(https://cdn.wallpapersafari.com/32/55/IFNUD4.jpg); background-size: 100%;">
+	     {% if registered %}
+	     <h1 >Thank you for registering!</h1>
+	     {% else %}
+	     <h1 style="color:white;font-size:70px;">Register Here!</h1>
+	     <h3 style="color:white;">Fill Out The Form :)</h3>
+	     <br>
+	     <form enctype="multipart/form-data" method="POST" style="color:white;font-size:20px;" >
+	     	{% csrf_token %}
+	     	{{ user_form.as_p }}
+	     	{{ profile_form.as_p}}
+	     	<input type="submit" name="" value="Register">
+	     </form>
+	     {% endif %}
+
+	</div>
+</div>
+{% endblock %}
